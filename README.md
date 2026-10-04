@@ -1,130 +1,162 @@
 <div align="center">
 
-✨ Pokédex — Catch. Explore. Favorite. ✨
+# ⚡ Pokédex — Catch. Explore. Favorite.
 
-A Flutter Pokédex built from the Figma Community design, powered by live PokéAPI data.
+### A Flutter Pokédex built from the supplied Figma design and powered by live PokéAPI data.
 
-<p>
-  <img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
-  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart">
-  <img src="https://img.shields.io/badge/Riverpod-State%20Management-7C4DFF?style=for-the-badge" alt="Riverpod">
-  <img src="https://img.shields.io/badge/SharedPreferences-Local%20Storage-6D4C41?style=for-the-badge" alt="SharedPreferences">
-  <img src="https://img.shields.io/badge/API-PokéAPI-EF5350?style=for-the-badge" alt="PokéAPI">
-</p>
+<br>
 
-<p>
-  <b>Search • Filter • Sort • Paginate • Inspect • Favorite • Persist</b>
-</p>
+<img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
+<img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart">
+<img src="https://img.shields.io/badge/Riverpod-State%20Management-7C4DFF?style=for-the-badge" alt="Riverpod">
+<img src="https://img.shields.io/badge/SharedPreferences-Local%20Storage-6D4C41?style=for-the-badge" alt="SharedPreferences">
+<img src="https://img.shields.io/badge/API-Pok%C3%A9API-EF5350?style=for-the-badge" alt="PokéAPI">
+
+<br><br>
+
+**Search • Filter • Sort • Paginate • Inspect • Favorite • Persist**
 
 </div>
 
-🎯 What is this?
+---
 
-This project is a Flutter implementation of the Pokédex / Pokémon App Figma reference supplied for the take-home assignment.
+## 🎯 What is this?
 
-The app uses live Pokémon data from PokéAPI and focuses on the core requirements of the task: a polished list experience, real Pokémon details, and — most importantly — favorites that stay synchronized across the entire app.
+This project is a Flutter implementation of the **Pokédex / Pokémon App** Figma design provided for the take-home assignment.
 
-The idea: the UI feels like a Pokédex, but the data and favorite state are real.
+The app consumes **live data from the public PokéAPI** and focuses on the core requirements of the task:
 
-The assignment explicitly evaluates Flutter/Dart fundamentals, API integration, state management, design fidelity, readability, and the real-time favorites checkpoint. This implementation is built around those priorities.
+- a Pokémon list
+- infinite pagination
+- search
+- type filtering
+- sorting
+- detailed Pokémon information
+- locally persisted favorites
+- real-time favorite synchronization across screens
 
-👀 App Showcase
+> ### 💡 The idea
+> **The UI feels like a Pokédex, but the data and favorite state are real.**
 
-🧭 Pokédex — the home base
+The implementation was intentionally kept focused on the areas the assignment evaluates most heavily: Flutter/Dart fundamentals, API integration, state management, clean structure, UI fidelity, and especially the **Favorites real-time synchronization checkpoint**.
 
-Search Pokémon by name, filter by type, change sorting, scroll infinitely through live API data, and favorite anything with one tap.
+---
 
-<img src="docs/screenshots/main.png" alt="Pokédex main screen" width="280">
+# 👀 App Showcase
 
-🔎 Pokémon Details — go deeper
+## 🧭 Pokédex — the home base
 
-The detail experience includes the Pokémon hero section, description, physical information, category, abilities, gender, weaknesses, evolutions, and base stats.
+The main screen combines the core browsing experience:
 
-Hero + information
+- Live Pokémon data
+- Search by name
+- Type filtering
+- Sorting
+- Infinite scrolling
+- Type-themed cards
+- Favorite actions
+- Four-item bottom navigation
 
-Gender + weaknesses + evolutions + stats
+<img src="docs/screenshots/main.png" alt="Pokédex main screen" width="330">
 
-<img src="docs/screenshots/detail_top.png" alt="Pokémon detail top" width="280">
+---
 
-<img src="docs/screenshots/detail_stats.png" alt="Pokémon detail stats" width="280">
+## 🔎 Pokémon Details — go deeper
 
-❤️ Favorites — one source of truth
+Tap any Pokémon to open its detailed view.
 
-Favorite a Pokémon from the list or the detail screen and the state stays synchronized. Favorites are stored locally, so they survive an app restart.
+The detail experience includes:
 
-<img src="docs/screenshots/favorites.png" alt="Favorites screen" width="280">
+- Pokémon artwork
+- Name and ID
+- Type badges
+- Description
+- Weight
+- Height
+- Category
+- Ability
+- Gender
+- Weaknesses
+- Evolutions
+- Base stats
 
-🌍 Regions — extending the Figma experience
+<table>
+<tr>
+<td align="center">
 
-The assignment's core requirement is the Pokédex/detail/favorites flow, but the Figma also presents region navigation. A lightweight Regions tab was added to make the navigation feel complete without introducing unnecessary backend complexity.
+<b>Hero + Information</b>
 
-<img src="docs/screenshots/regions.png" alt="Regions screen" width="280">
+<br><br>
 
-⚡ Core Features
+<img src="docs/screenshots/detail_top.png" alt="Pokémon detail top screen" width="300">
 
-Area
+</td>
+<td align="center">
 
-Implementation
+<b>Stats + Evolutions</b>
 
-Pokémon list
+<br><br>
 
-Live data from PokéAPI
+<img src="docs/screenshots/detail_stats.png" alt="Pokémon detail stats screen" width="300">
 
-Pagination
+</td>
+</tr>
+</table>
 
-Infinite scroll using the API next URL
+---
 
-Search
+## ❤️ Favorites — one source of truth
 
-Filters the currently loaded Pokémon by name
+Favorites are not maintained independently on different screens.
 
-Type filter
+Favorite a Pokémon from the list or detail page and the state is reflected throughout the app.
 
-Filters loaded Pokémon by type
+Favorites are also persisted locally, so they remain available after restarting the app.
 
-Sorting
+<img src="docs/screenshots/favorites.png" alt="Favorites screen" width="330">
 
-Lowest Number, Highest Number, A–Z, Z–A
+---
 
-Detail
+## 🌍 Regions — extending the Figma experience
 
-Full Pokémon detail fetched by ID
+The supplied Figma also contains a Regions experience, so a lightweight Regions tab was added to make the overall navigation feel complete.
 
-Types
+<img src="docs/screenshots/regions.png" alt="Regions screen" width="330">
 
-Type-colored chips and themed artwork panels
+---
 
-Stats
+# ⚡ Features
 
-HP, Attack, Defense, Sp. Attack, Sp. Defense, Speed
+| Area | Implementation |
+|---|---|
+| Pokémon List | Live data from PokéAPI |
+| Pagination | Infinite scroll using the API `next` URL |
+| Search | Filters the currently loaded Pokémon by name |
+| Type Filter | Filters loaded Pokémon by type |
+| Sorting | Lowest Number, Highest Number, A–Z, Z–A |
+| Pokémon Detail | Full detail data fetched by ID |
+| Type Themes | Type-colored cards, chips and artwork panels |
+| Base Stats | HP, Attack, Defense, Sp. Attack, Sp. Defense, Speed |
+| Favorites | Add/remove favorites from list and detail |
+| Favorite Persistence | Favorite IDs stored locally |
+| Shared State | Riverpod single source of truth |
+| Favorites Screen | Displays only favorited Pokémon |
+| Extra Navigation | Regions + Profile tabs inspired by the supplied design |
 
-Favorites
+---
 
-Add/remove from list, detail, and Favorites
-
-Persistence
-
-Favorite Pokémon IDs saved locally
-
-Shared state
-
-Riverpod single source of truth
-
-Extra navigation
-
-Regions + Profile tabs inspired by the supplied Figma
-
-❤️ The Technical Checkpoint
+# ❤️ The Technical Checkpoint
 
 The most important part of the assignment is not the heart icon.
 
-It is the state behind the heart.
+It is **the state behind the heart**.
 
-The app deliberately uses one shared favorites state:
+The app deliberately uses one shared favorites provider:
 
+```text
                     ┌─────────────────────┐
                     │  favoritesProvider  │
-                    │   Set<int> of IDs   │
+                    │    Set<int> IDs     │
                     └──────────┬──────────┘
                                │
               ┌────────────────┼────────────────┐
@@ -137,89 +169,111 @@ The app deliberately uses one shared favorites state:
                                ▼
                        SharedPreferences
                          local persistence
+```
 
-That means:
+This means:
 
-List ❤️
-   ↓
-Shared provider
-   ↓
-Detail ❤️ updates instantly
-   ↓
-Favorites updates instantly
-   ↓
+```text
+Pokédex ❤️
+    ↓
+favoritesProvider
+    ↓
+Detail ❤️ updates
+    ↓
+Favorites updates
+    ↓
 Restart app
-   ↓
+    ↓
 Favorite IDs restored
+```
 
-No duplicated favorite state per screen. No manual refresh. No backend.
+There is no duplicated favorites state per screen.
 
-🧠 Why These Technical Choices?
+There is no manual refresh.
 
-State Management — Riverpod
+There is no backend.
 
-Riverpod was chosen because the assignment specifically asks for a single source of truth shared across screens.
+---
 
-The favorites state is exposed through one provider and observed by the Pokédex cards, detail screen, and Favorites screen.
+# 🧠 Why These Technical Choices?
 
-That keeps the UI reactive while avoiding screen-specific copies of the same state.
+## State Management — Riverpod
 
-Why not local setState for favorites?
+**Riverpod** was chosen as the application's shared state-management solution.
 
-setState is perfectly useful for screen-local state such as:
+Favorites are used by multiple screens, so keeping them inside individual `StatefulWidget`s would make synchronization unnecessarily fragile.
 
-search text
+Instead, one provider owns the favorite IDs and all relevant screens observe that same state.
 
-selected type
+### Screen-local state still uses `setState`
 
-selected sorting mode
+`setState` remains appropriate for local UI state such as:
 
-loading indicators
+- search text
+- selected type
+- selected sorting option
+- loading flags
+- pagination state
 
-But favorites cross screen boundaries, so keeping them in each screen would make synchronization fragile.
+The distinction keeps shared state shared and local state local.
 
-Local Storage — SharedPreferences
+---
 
-Only favorite Pokémon IDs are persisted.
+## Local Storage — SharedPreferences
 
-Why IDs?
+The application stores only the **IDs of favorited Pokémon** locally.
 
-Small and simple.
+For example:
 
-Stable identifier for PokéAPI resources.
+```text
+[1, 6, 23, 75]
+```
 
-Avoids duplicating large Pokémon objects in local storage.
+### Why IDs?
 
-Detail information can be requested from PokéAPI when needed.
+- Small amount of data
+- Stable identifiers for Pokémon
+- Avoids duplicating complete API responses
+- Pokémon information can be fetched when needed
+- Fits the local-only favorites requirement of the assignment
 
-This matches the assignment's local-only favorites requirement without introducing a backend or cloud-sync layer.
+This also keeps the app simple without introducing a backend or cloud-sync layer.
 
-🌐 API Integration
+---
 
-The app consumes the public PokéAPI.
+# 🌐 API Integration
 
-List
+The app uses the public **PokéAPI**, which requires no authentication.
 
+## Pokémon List
+
+```http
 GET https://pokeapi.co/api/v2/pokemon?limit=20&offset=0
+```
 
-The response's next URL drives infinite scrolling.
+The API response provides a `next` URL, which is used to implement infinite scrolling.
 
-Detail
+## Pokémon Detail
 
+```http
 GET https://pokeapi.co/api/v2/pokemon/{id}
+```
 
-Additional detail data
+## Related Detail Data
 
-For the richer Figma-style detail page, the app also uses related PokéAPI resources for:
+Additional Pokémon information is retrieved through related PokéAPI resources for:
 
-Pokemon Species
-Type relationships
-Evolution chain
+- Pokémon species
+- type relationships
+- evolution chains
 
 No authentication is required.
 
-🏗️ Project Structure
+---
 
+# 🏗️ Project Structure
+
+```text
 lib/
 ├── main.dart
 │
@@ -240,294 +294,355 @@ lib/
 │
 └── widgets/
     └── pokemon_card.dart
+```
 
-The separation keeps responsibilities understandable:
+### Responsibility flow
 
-API / parsing
-     ↓
+```text
+API / Parsing
+      ↓
 Models
-     ↓
-State
-     ↓
+      ↓
+Shared State
+      ↓
 Screens
-     ↓
-Reusable widgets
+      ↓
+Reusable Widgets
+```
 
-🚀 Run Locally
+The goal was to keep API/data access separate from UI code while maintaining a small and understandable project structure.
 
-Prerequisites
+---
+
+# 🚀 Run Locally
+
+## Prerequisites
 
 Install:
 
-Flutter SDK
+- Flutter SDK
+- Dart SDK (included with Flutter)
+- Xcode for iOS development
 
-Dart SDK (included with Flutter)
+Verify your Flutter environment:
 
-Xcode for iOS development
-
-Check your environment with:
-
+```bash
 flutter doctor
+```
 
-1. Clone
+---
 
-git clone <YOUR_REPOSITORY_URL>
-cd pokedex_app
+## 1. Clone the repository
 
-2. Install dependencies
+```bash
+git clone https://github.com/Noor1246/pokedex_flutter.git
+cd pokedex_flutter
+```
 
+---
+
+## 2. Install dependencies
+
+```bash
 flutter pub get
+```
 
-3. Run
+---
 
-For a connected device:
+## 3. Run the app
 
+For an available device:
+
+```bash
+flutter devices
 flutter run
+```
 
 For a specific iOS simulator:
 
-flutter devices
+```bash
 flutter run -d <device-id>
+```
 
 The app is designed for a standard portrait phone layout.
 
-✅ Quality Checks
+---
 
-Before submitting:
+# ✅ Code Quality
 
+Before submission, the project was formatted and analyzed using:
+
+```bash
 dart format lib/
 flutter analyze
+```
 
-The final project should report:
+The final project reports:
 
+```text
 No issues found!
+```
 
-🧩 Edge Cases Covered
+---
 
-The assignment asks for basic resilience, so the app handles:
+# 🧩 Edge Cases Covered
 
-Initial loading state
+The application handles the main edge cases requested by the assignment:
 
-API/network failure with retry
+- Initial loading state
+- API/network failure
+- Retry after API failure
+- Empty search results
+- Empty Favorites state
+- Favorite persistence after app restart
+- Favorite Pokémon that are not currently loaded in the main list
+- Pagination loading state
+- Pokémon detail loading failures
 
-Empty search results
+---
 
-Empty Favorites state
+# 🎨 Design Implementation
 
-Favorites restored after restart
+The goal was **reasonable Figma fidelity**, not pixel-perfect duplication.
 
-Favorite Pokémon that are not currently in the loaded list
+The implementation follows the visual language of the supplied design:
 
-Pagination loading state
+- Rounded Pokémon cards
+- Light type-tinted card backgrounds
+- Saturated type-colored artwork panels
+- Translucent type motifs behind artwork
+- Type-colored chips
+- Large Pokémon artwork
+- Heart actions
+- Compact filter/sort pills
+- Four-item bottom navigation
+- Colored detail hero section
+- White information cards
+- Weakness chips
+- Evolution cards
+- Base-stat bars
 
-API detail loading failures
+The application uses the Figma design as the visual reference while keeping the implementation practical within the assignment scope.
 
-🎨 Design Notes
+---
 
-The goal was reasonable Figma fidelity, not pixel-perfect duplication.
+# 🧭 Navigation
 
-The implementation preserves the main visual language of the reference:
+The app contains four navigation destinations inspired by the supplied Figma:
 
-Rounded cards
+```text
+┌────────────┬────────────┬────────────┬────────────┐
+│  Pokédex   │  Regiões   │  Favoritos │   Perfil   │
+└────────────┴────────────┴────────────┴────────────┘
+```
 
-Type-based color themes
+### Pokédex
 
-Light tinted card backgrounds
+Core assignment functionality:
 
-Saturated artwork panels
+- list
+- search
+- filter
+- sort
+- pagination
 
-Type chips
+### Regiões
 
-Large Pokémon artwork
+Lightweight visual implementation inspired by the provided Figma.
 
-Heart actions
+### Favoritos
 
-Compact filter/sort pills
+Core assignment functionality:
 
-Four-item bottom navigation
+- locally persisted favorites
+- shared state
+- real-time synchronization
 
-Detail hero + information cards
+### Perfil
 
-Base-stat bars
+Lightweight UI inspired by the supplied navigation design.
 
-The extra Regions and Profile navigation tabs were added because they appear in the supplied Figma. They are intentionally lightweight because they are not part of the assignment's core functional scope.
+---
 
-🚫 Deliberate Scope Decisions
+# 🚫 Deliberate Scope Decisions
 
-No Login / Authentication
+## No Login / Authentication
 
-The supplied Figma includes login-related screens, but authentication is explicitly out of scope for this assignment.
+The supplied Figma contains login-related screens, but authentication is explicitly **out of scope** for this assignment.
 
-Favorites are intentionally local-only.
+Therefore, this project intentionally does not implement:
 
-No backend
-No auth
-No cloud sync
+```text
+Backend authentication
+Login
+Registration
+Cloud accounts
+Cloud favorite synchronization
+```
 
-That keeps the implementation focused on the requirements that are actually being evaluated.
+Favorites are local-only by design.
 
-No Full Offline Cache
+---
 
-Full Pokémon-data offline caching was not implemented because it is optional in the assignment. Favorite IDs are persisted locally as required.
+## No Full Offline Pokémon Cache
 
-No CI/CD or Release Packaging
+Full offline caching of Pokémon data was not implemented.
 
-The assignment explicitly excludes CI/CD, release packaging, and test-coverage targets from the required scope.
+Favorite IDs are persisted locally as required, while Pokémon information is retrieved from PokéAPI when necessary.
 
-🔧 Known Limitations / What I Would Improve Next
+---
 
-With more time, I would:
+## No CI/CD or Release Packaging
 
-Extract shared theme/type-color definitions into a dedicated theme utility so type colors are defined once rather than in multiple UI files.
+The assignment explicitly excludes:
 
-Introduce stronger API/data-layer abstractions for caching and request deduplication.
+- automated CI/CD
+- release packaging
+- App Store / Play Store packaging
+- test coverage targets
 
-Add automated widget/unit tests around favorites synchronization and API parsing.
+The implementation therefore focuses on functionality and code quality instead.
 
-Turn Regions into a richer data-driven feature rather than a lightweight visual navigation screen.
+---
 
-Further tune spacing and typography for pixel-level Figma fidelity.
+# 🔧 Known Limitations
 
-📋 Requirement Coverage
+With additional development time, I would improve:
 
-Assignment requirement
+1. Extract all type colors/icons into a centralized theme utility instead of defining them across multiple UI files.
+2. Introduce stronger API abstractions and request caching/deduplication.
+3. Add automated tests for favorites synchronization and API parsing.
+4. Expand the Regions experience into a fully data-driven feature.
+5. Add richer offline caching where useful.
+6. Continue refining spacing and typography toward pixel-level Figma fidelity.
 
-Status
+---
 
-Live PokéAPI data
+# 📋 Assignment Requirement Coverage
 
-✅
+| Assignment Requirement | Status |
+|---|:---:|
+| Live PokéAPI data | ✅ |
+| Paginated Pokémon list | ✅ |
+| Infinite scroll / API `next` | ✅ |
+| Search currently loaded Pokémon by name | ✅ |
+| Loading indicator | ✅ |
+| Retry/error state | ✅ |
+| Favorite toggle on cards | ✅ |
+| Pokémon detail screen | ✅ |
+| Detail artwork / name / ID | ✅ |
+| Type-colored detail chips | ✅ |
+| Height / Weight | ✅ |
+| Abilities | ✅ |
+| Base Stats | ✅ |
+| Favorite toggle in detail header | ✅ |
+| Local favorite persistence | ✅ |
+| List ↔ Detail synchronization | ✅ |
+| Favorites real-time synchronization | ✅ |
+| Single shared source of truth | ✅ |
+| Favorites tab | ✅ |
+| Empty favorites state | ✅ |
+| Empty search state | ✅ |
+| Network failure handling | ✅ |
+| Portrait phone layout | ✅ |
+| Organized project structure | ✅ |
+| `dart format` | ✅ |
+| `flutter analyze` | ✅ |
+| README | ✅ |
 
-Paginated Pokémon list
+---
 
-✅
+# 📝 Git Workflow
 
-Infinite scroll / next
+The project was developed with incremental Git commits rather than a single giant commit.
 
-✅
+Example commit history:
 
-Search loaded Pokémon by name
+```text
+docs: add project README and app screenshots
+feat: implement Pokédex, details and favorites
+feat: add PokéAPI integration and data models
+chore: initialize Flutter Pokédex project
+```
 
-✅
+This keeps the development history easier to follow and reflects the incremental nature of the implementation.
 
-Loading state
+---
 
-✅
+# 🎯 What Was Prioritized?
 
-Retry/error state
+The assignment has a fixed amount of time and explicitly says it is evaluating Flutter/Dart fundamentals, API integration, state management, design fidelity, and especially favorites synchronization.
 
-✅
+Because of that, development effort was intentionally prioritized toward:
 
-Favorite toggle on cards
+```text
+                    ┌──────────────────────┐
+                    │   Core Requirements  │
+                    └──────────┬───────────┘
+                               │
+          ┌────────────────────┼────────────────────┐
+          ▼                    ▼                    ▼
+       Flutter             PokéAPI             Favorites
+          │                    │                    │
+          ▼                    ▼                    ▼
+       UI/UX              Pagination          Persistence
+                           Detail API        Real-time sync
+```
 
-✅
+The goal was to build the required experience completely rather than spend most of the available time on out-of-scope backend/authentication features.
 
-Full Pokémon detail
+---
 
-✅
+# 📌 Assignment Reference
 
-Type-colored detail chips
+This project was implemented against the supplied:
 
-✅
+**Take-Home Assignment: Pokédex Flutter App**
 
-Height / weight / abilities
+Core task areas included:
 
-✅
+- Flutter/Dart implementation
+- PokéAPI integration
+- Figma-inspired Pokémon list
+- Pagination
+- Search
+- Pokémon detail screen
+- Local favorites
+- Real-time favorite synchronization
+- Shared source of truth
+- Clean project organization
+- README and technical justification
 
-Base stats
+---
 
-✅
+# 🎨 Design Attribution
 
-Favorite toggle on detail
+### UI Reference
 
-✅
+**Pokédex / Pokémon App — Figma Community**  
+by **Junior Saraiva**
 
-Local favorite persistence
+The assignment identifies the design reference as licensed under **CC BY 4.0**.
 
-✅
+### Data Source
 
-Real-time List ↔ Detail sync
+**PokéAPI**
 
-✅
+Public Pokémon API used for live application data.
 
-Real-time Favorites sync
+This project is an independent Flutter implementation created for the take-home assignment and is not an official Pokémon product.
 
-✅
-
-Single shared source of truth
-
-✅
-
-Favorites tab
-
-✅
-
-Empty favorites state
-
-✅
-
-Empty search state
-
-✅
-
-Portrait phone layout
-
-✅
-
-Clear code organization
-
-✅
-
-dart format
-
-✅
-
-flutter analyze
-
-✅
-
-README
-
-✅
-
-📝 Assignment Reference
-
-Built against the Take-Home Assignment: Pokédex Flutter App requirements:
-
-Flutter/Dart application
-
-PokéAPI live data
-
-Figma-inspired UI
-
-List → Detail → Favorites flow
-
-Local-only favorites
-
-Real-time shared favorite state
-
-Clean structure and readable Dart
-
-README with technical choices and limitations
-
-🎨 Design Attribution
-
-UI implementation references:
-
-Pokédex / Pokémon App — Figma Community
-by Junior Saraiva
-Licensed under CC BY 4.0, as stated in the assignment materials.
-
-Data:
-
-PokéAPI — public Pokémon API, no authentication required.
-
-This repository contains an independent Flutter implementation for the take-home assignment and is not an official Pokémon product.
+---
 
 <div align="center">
 
-⚡ Built with Flutter. Powered by PokéAPI. Held together by one favoritesProvider. ❤️
+# ⚡ Built with Flutter. Powered by PokéAPI. Driven by one source of truth. ❤️
 
-Catch something. Explore something. Favorite something.
+### Catch something. Explore something. Favorite something.
+
+<br>
+
+**GitHub:**  
+https://github.com/Noor1246/pokedex_flutter
 
 </div>
